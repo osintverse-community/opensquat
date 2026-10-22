@@ -26,7 +26,7 @@ outputs:
 runtime:
   kind: docker
   # Filled in by the release workflow with the pushed image's digest.
-  image: ghcr.io/osintverse-community/opensquat@sha256:0000000000000000000000000000000000000000000000000000000000000000
+  image: ghcr.io/osintverse-community/opensquat@sha256:0b8132ddb2784949be33a16a9bdf484f1e9bd131b663ae953973685173bddb35
   platforms: [linux/amd64, linux/arm64]
   command: ["sh", "-c", "printf '%s\n' \"$1\" > /tmp/keywords.txt && shift && exec opensquat -k /tmp/keywords.txt -o /tmp/opensquat-results.txt \"$@\"", "opensquat", "{keyword}", "-c", "{confidence}"]
   output_format: text
